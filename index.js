@@ -27,18 +27,62 @@ let dental = [
 ];
 
 
-document.write('<p>Estadisticas centro medico ñuñoa</p>');
+/*---------------------------------------------------*/
+const printTable = (array)=>{
+    let reservas = `
+        <table>
+            <tr>
+                <th>Hora</th>
+                <th>Especialista</th>
+                <th>Paciente</th>
+                <th>Rut</th>
+                <th>Prevision</th>
+            </tr>
+    `;
+
+    for(let i=0; i < array.length; i++){
+        reservas += `
+            <tr>
+                <th>${array[i].hora}</th>
+                <th>${array[i].especialista}</th>
+                <th>${array[i].paciente}</th>
+                <th>${array[i].rut}</th>
+                <th>${array[i].prevision}/th>
+            </tr>
+        `;
+    }
+    
+    reservas += `</table>`
+
+    document.write(reservas);
+};
+/*---------------------------------------------------*/
+
+document.write('<h1>Estadisticas centro médico ñuñoa</h1>');
 
 //Requerimiento #2: Mostrar primera y última atención por cada listado.
-document.write('<h2>Rediología</h2>');
+document.write('<h2>Requerimiento #2</h2>');
+document.write('<h3>Radiología</h3>');
 document.write (`Primera atención: ${radiologia[0].paciente} - ${radiologia[0].prevision} | Última atención: ${radiologia[radiologia.length - 1].paciente} ${radiologia[radiologia.length - 1].prevision} . <br>`);
 
 
-document.write('<h2>Traumoatología</h2>');
+document.write('<h3>Traumoatología</h3>');
 document.write (`Primera atención: ${traumoatologia[0].paciente} - ${traumoatologia[0].prevision} | Última atención: ${traumoatologia[traumoatologia.length - 1].paciente} ${traumoatologia[traumoatologia.length - 1].prevision} . <br>`);
 
 
-document.write('<h2>Dental</h2>');
-document.write (`Primera atención: ${dental[0].paciente} - ${dental[0].prevision} | Última atención: ${dental[dental.length - 1].paciente} ${dental[dental.length - 1].prevision} . <br>`);
+document.write('<h3>Dental</h3>');
+document.write(`Primera atención: ${dental[0].paciente} - ${dental[0].prevision} | Última atención: ${dental[dental.length - 1].paciente} ${dental[dental.length - 1].prevision} . <br>`);
+
+
 
 //Requerimiento #3:Recorrer el arreglo y mostrar su contenido en una tabla.
+document.write('<h2>Requerimiento #3</h2>');
+document.write('<h3>Radiología</h3>');
+printTable(radiologia);
+
+document.write('<h3>Traumoatología</h3>');
+printTable(traumoatologia);
+
+document.write('<h3>Dental</h3>');
+printTable(dental);
+
