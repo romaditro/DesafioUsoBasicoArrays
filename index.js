@@ -29,6 +29,7 @@ let dental = [
 
 /*---------------------------------------------------*/
 const printTable = (array)=>{
+    
     let reservas = `
         <table>
             <tr>
@@ -47,7 +48,7 @@ const printTable = (array)=>{
                 <th>${array[i].especialista}</th>
                 <th>${array[i].paciente}</th>
                 <th>${array[i].rut}</th>
-                <th>${array[i].prevision}/th>
+                <th>${array[i].prevision}</th>
             </tr>
         `;
     }
