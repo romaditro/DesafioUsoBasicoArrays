@@ -28,6 +28,7 @@ let dental = [
 
 
 /*---------------------------------------------------*/
+//Función para imprimir el contenido de los arreglos en una tabla independiente para cada arrego.
 const printTable = (array)=>{
     
     let reservas = `
